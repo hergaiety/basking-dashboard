@@ -1,0 +1,23 @@
+{
+  "name": "basking-dashboard",
+  "version": "0.0.1",
+  "description": "Dashboard for my personal home server ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharpshark28/basking-dashboard.git"
+  },
+  "author": "Jo Wroten <jo@wroten.me>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sharpshark28/basking-dashboard/issues"
+  },
+  "homepage": "https://github.com/sharpshark28/basking-dashboard#readme",
+  "devDependencies": {
+    "node-static": "^0.7.11"
+  }
+}

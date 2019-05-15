@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "copy:assets": "bash ./copyAssets.sh",
+    "mk:raw": "bash ./mkRaw.sh",
+    "mk:data": "node mkData.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +21,7 @@
   },
   "homepage": "https://github.com/sharpshark28/basking-dashboard#readme",
   "devDependencies": {
-    "node-static": "^0.7.11"
+    "node-static": "^0.7.11",
+    "purecss": "^1.0.0"
   }
 }

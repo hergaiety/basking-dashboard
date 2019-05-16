@@ -16,7 +16,16 @@
       <div class="autogrid">
         <section class="col">
           <div class="feed-card">
-            <img src="assets/emby.png" alt="" class="fadein" />
+            <div>
+              <meter min="0" v-bind:max="diskSize" v-bind:value="diskUsed"></meter>
+            </div>
+            <div class="load" v-if="fetchingDiskSpace"></div>
+            <h3 v-else>Used: {{diskCapacity}}
+          </div>
+        </section>
+
+        <section class="col">
+          <div class="feed-card">
             <h3><a href="/emby">Emby</a></h3>
           </div>
         </section>

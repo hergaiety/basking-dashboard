@@ -29,3 +29,10 @@ app.route(apiPrefix + '/builddate').get((req, res) => {
   });
 });
 
+app.route(apiPrefix + '/diskspace').get((req, res) => {
+  fs.readFile(path.join(__dirname, 'data/json', 'diskspace.json'), 'utf8', (err, json) => {
+    if (err) { throw new Error(err); }
+    res.json(JSON.parse(json));
+  });
+});
+

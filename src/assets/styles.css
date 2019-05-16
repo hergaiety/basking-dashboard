@@ -1,3 +1,7 @@
+meter {
+  width: 100%;
+}
+
 .fadein {
   animation: fadein 1s;
 }

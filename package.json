@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/sharpshark28/basking-dashboard#readme",
   "devDependencies": {
-    "node-static": "^0.7.11",
-    "vital-css": "^2.2.1"
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "vital-css": "^2.2.1",
+    "vue": "^2.6.10"
   }
 }

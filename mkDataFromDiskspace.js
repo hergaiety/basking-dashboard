@@ -19,7 +19,7 @@ module.exports = async function(useTestData = false) {
       capacity,
     });
 
-    fs.writeFile(path.join(__dirname, 'data/json/real', 'diskspace.json'), jsonString, err => {
+    fs.writeFile(path.join(__dirname, 'data/json', 'diskspace.json'), jsonString, err => {
       if (err) throw err;
     });
   });

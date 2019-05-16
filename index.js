@@ -1,12 +1,31 @@
-var static = require('node-static');
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
 
-var fileServer = new static.Server('./public');
+const app = express();
+const apiPrefix = '/api';
+const port = 8080;
 
-require('http').createServer(function (request, response) {
-  request.addListener('end', function () {
-    fileServer.serve(request, response);
-  }).resume();
-}).listen(8080);
+app.use(express.static(path.join(__dirname + '/public'), {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['html'],
+  maxAge: '1d',
+  redirect: false,
+  setHeaders: (res, path, stat) => {
+    res.set('x-timestamp', Date.now());
+  },
+}));
 
-console.log('Serving on http://localhost:8080');
-console.log('Should be proxied to https://basking.wroten.me/');
+app.listen(port, () => {
+  console.log(`Serving on http://localhost:${port}`);
+  console.log('Should be proxied to https://basking.wroten.me/');
+});
+
+app.route(apiPrefix + '/builddate').get((req, res) => {
+  fs.readFile(path.join(__dirname, 'data/json', 'date.json'), 'utf8', (err, json) => {
+    if (err) { throw new Error(err); }
+    res.json(JSON.parse(json));
+  });
+});
+

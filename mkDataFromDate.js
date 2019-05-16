@@ -13,7 +13,7 @@ module.exports = async function(useTestData = false) {
       pretty: date.toDateString(),
     });
 
-    fs.writeFile(path.join(__dirname, 'data/json/real', 'date.json'), jsonString, err => {
+    fs.writeFile(path.join(__dirname, 'data/json', 'date.json'), jsonString, err => {
       if (err) throw err;
     });
   });

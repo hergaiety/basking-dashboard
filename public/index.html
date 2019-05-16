@@ -8,21 +8,38 @@
   <link rel="stylesheet" type="text/css" href="./assets/styles.css" />
 </head>
 <body>
-  <main>
-    <div class="autogrid">
-      <section class="col">
-        <div class="feed-card">
-          <img src="assets/emby.png" alt="" />
-          <h3><a href="/emby">Emby</a></h3>
-        </div>
-      </section>
+  <script src="./assets/axios.min.js"></script>
+  <script src="./assets/vue.min.js"></script>
 
-      <section class="col">
-        <div class="feed-card">
-          <h3><a href="/portainer">Portainer</a></h3>
-        </div>
+  <div id="app">
+    <main>
+      <div class="autogrid">
+        <section class="col">
+          <div class="feed-card">
+            <img src="assets/emby.png" alt="" class="fadein" />
+            <h3><a href="/emby">Emby</a></h3>
+          </div>
+        </section>
+
+        <section class="col">
+          <div class="feed-card">
+            <h3><a href="/portainer">Portainer</a></h3>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="row">
+      <section class="section">
+        <small class="small">
+          Last Built:
+          <span v-if="fetchingLastBuildDate" class="load smallest"></span>
+          <span v-else class="fadein">{{lastBuildDate}}</span>
+        </small>
       </section>
-    </div>
-  </main>
+    </footer>
+  </div>
+
+  <script src="./assets/app.js"></script>
 </body>
 </html>

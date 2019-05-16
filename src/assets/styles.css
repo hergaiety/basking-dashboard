@@ -1,4 +1,35 @@
+body {
+  background: #282a36;
+}
+
+footer {
+  color: #44475a;
+}
+
+.feed-card {
+  background: #44475a;
+  color: #f8f8f2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f8f8f2;
+}
+
+a {
+  color: #ff79c6;
+}
+
+a:hover,
+a:target {
+  color: #bd93f9;
+}
+
+a:active {
+  color: #f8f8f2;
+}
+
 meter {
+  height: 1.5em;
   width: 100%;
 }
 

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "copy:assets": "bash ./copyAssets.sh",
+    "postinstall": "npm run copy:assets",
     "mk:raw": "bash ./mkRaw.sh",
     "mk:data": "node mkData.js",
     "mk:data:test": "node mkData.js --test",
@@ -23,6 +24,6 @@
   "homepage": "https://github.com/sharpshark28/basking-dashboard#readme",
   "devDependencies": {
     "node-static": "^0.7.11",
-    "purecss": "^1.0.0"
+    "vital-css": "^2.2.1"
   }
 }

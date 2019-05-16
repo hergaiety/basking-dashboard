@@ -1,6 +1,6 @@
 public
 data/raw/real
-data/json/real
+data/json
 # Logs
 logs
 *.log

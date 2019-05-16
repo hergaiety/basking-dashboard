@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = async function() {
-  fs.readFile(path.join(__dirname, 'data/raw/real', 'date.raw'), 'utf8', (err, date) => {
+module.exports = async function(useTestData = false) {
+  fs.readFile(path.join(__dirname, 'data/raw', useTestData ? 'test' : 'real', 'date.raw'), 'utf8', (err, date) => {
     if (err || !date.length) {
       console.error(err);
       process.exit(1);

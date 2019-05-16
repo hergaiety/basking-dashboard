@@ -8,6 +8,7 @@
     "copy:assets": "bash ./copyAssets.sh",
     "mk:raw": "bash ./mkRaw.sh",
     "mk:data": "node mkData.js",
+    "mk:data:test": "node mkData.js --test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

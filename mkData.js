@@ -1,5 +1,7 @@
 let dataFromDate = require('./mkDataFromDate.js');
 let dataFromDiskspace = require('./mkDataFromDiskspace.js');
 
-dataFromDate();
-dataFromDiskspace();
+let isTestMode = process.argv[2] === '--test';
+
+dataFromDate(isTestMode);
+dataFromDiskspace(isTestMode);

@@ -1,5 +1,5 @@
 mkdir -p data/raw/real
-mkdir -p data/json/real
+mkdir -p data/json
 
 touch data/raw/real/date.raw
 date > data/raw/real/date.raw

@@ -4,9 +4,10 @@
   "description": "Dashboard for my personal home server ",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "copy:assets": "bash ./copyAssets.sh",
     "postinstall": "npm run copy:assets",
+    "start": "node index.js",
+    "build": "npm run copy:assets && npm run mk:raw && npm run mk:data",
+    "copy:assets": "bash ./copyAssets.sh",
     "mk:raw": "bash ./mkRaw.sh",
     "mk:data": "node mkData.js",
     "mk:data:test": "node mkData.js --test",

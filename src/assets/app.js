@@ -12,11 +12,15 @@ new Vue({
     fetchingCPUUsage: true,
     cpuUsageNum: 0,
     cpuUsageStr: '',
+
+    fetchingUptime: true,
+    uptime: '',
   },
   created() {
     this.fetchLastBuildDate();
     this.fetchDiskSpace();
     this.fetchCPUUsage();
+    this.fetchUptime();
   },
   methods: {
     async fetchLastBuildDate() {
@@ -44,6 +48,14 @@ new Vue({
         this.cpuUsageNum = data.num;
         this.cpuUsageStr = data.str;
         this.fetchingCPUUsage = false;
+      } catch (err) { throw new Error(err); }
+    },
+    async fetchUptime() {
+      this.fetchingUptime = true;
+      try {
+        let { data } = await axios.get('/api/uptime');
+        this.uptime = data.uptime;
+        this.fetchingUptime = false;
       } catch (err) { throw new Error(err); }
     },
   },

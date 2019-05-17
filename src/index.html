@@ -54,9 +54,15 @@
     <footer class="row">
       <section class="section">
         <small class="small">
-          Last Built:
+          Dashboard Built:
           <span v-if="fetchingLastBuildDate" class="load smallest"></span>
-          <span v-else class="fadein">{{lastBuildDate}}</span>
+          <em v-else class="fadein">{{lastBuildDate}}</em>
+        </small>
+        /
+        <small class="small">
+          Uptime:
+          <span v-if="fetchingUptime" class="load smallest"></span>
+          <em v-else class="fadein">{{uptime}}</em>
         </small>
       </section>
     </footer>

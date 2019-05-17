@@ -43,3 +43,10 @@ app.route(apiPrefix + '/cpuusage').get((req, res) => {
   });
 });
 
+app.route(apiPrefix + '/uptime').get((req, res) => {
+  fs.readFile(path.join(__dirname, 'data/json', 'uptime.json'), 'utf8', (err, json) => {
+    if (err) { throw new Error(err); }
+    res.json(JSON.parse(json));
+  });
+});
+

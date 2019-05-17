@@ -4,14 +4,19 @@ new Vue({
     fetchingLastBuildDate: true,
     lastBuildDate: '',
 
-    fetchingDiskSpace: '',
+    fetchingDiskSpace: true,
     diskSize: '',
     diskUsed: '',
     diskCapacity: '',
+
+    fetchingCPUUsage: true,
+    cpuUsageNum: 0,
+    cpuUsageStr: '',
   },
   created() {
     this.fetchLastBuildDate();
     this.fetchDiskSpace();
+    this.fetchCPUUsage();
   },
   methods: {
     async fetchLastBuildDate() {
@@ -30,6 +35,15 @@ new Vue({
         this.diskUsed = data.used;
         this.diskCapacity = data.capacity;
         this.fetchingDiskSpace = false;
+      } catch (err) { throw new Error(err); }
+    },
+    async fetchCPUUsage() {
+      this.fetchingCPUUsage = true;
+      try {
+        let { data } = await axios.get('/api/cpuusage');
+        this.cpuUsageNum = data.num;
+        this.cpuUsageStr = data.str;
+        this.fetchingCPUUsage = false;
       } catch (err) { throw new Error(err); }
     },
   },

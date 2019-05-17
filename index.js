@@ -36,3 +36,10 @@ app.route(apiPrefix + '/diskspace').get((req, res) => {
   });
 });
 
+app.route(apiPrefix + '/cpuusage').get((req, res) => {
+  fs.readFile(path.join(__dirname, 'data/json', 'cpuusage.json'), 'utf8', (err, json) => {
+    if (err) { throw new Error(err); }
+    res.json(JSON.parse(json));
+  });
+});
+

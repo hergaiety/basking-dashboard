@@ -2,6 +2,26 @@ body {
   background: #282a36;
 }
 
+header {
+  position: relative;
+  color: white;
+  height: 3rem;
+}
+
+.logo {
+  height: 2rem;
+  margin: .5rem;
+}
+
+.name {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  line-height: 3rem;
+  color: #6272a4;
+  margin: 0;
+}
+
 footer {
   color: #f1fa8c;
 }
